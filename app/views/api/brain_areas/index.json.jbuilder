@@ -1,0 +1,1 @@
+json.array! @brain_areas, partial: "brain_area", as: :brain_area

@@ -1,0 +1,2 @@
+class BrainArea < ApplicationRecord
+end
