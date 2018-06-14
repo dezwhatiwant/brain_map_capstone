@@ -1,7 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Disease.create!(name:"Attention deficit hyperactivity disorder", symptoms:"Gives no close attention to details, Has trouble focusing on tasks even when trying very hard to, Has trouble organizing even simple tasks, Loses things necessary for tasks, Appears forgetful in daily activities, Has a short attention span and being easily distracted, Makes careless mistakes – for example, in schoolwork, Is unable to stick at tasks that are tedious or time-consuming, Appears unable to listen to or carry out instructions, Is constantly changing activity or task, Unable to sit still, Fidgets, Takes risks with little thought for the dangers, Talks excessively, Blurts out answers too early, Has trouble waiting their turn, Interrupts or intrudes on conversations, Says things seemingly unrelated to task/topic.", description:"ADHD is a mental disorder of the neurodevelopmental type. It is characterized by problems paying attention, excessive activity, or difficulty controlling behavior which is not appropriate for a person's age. The symptoms appear before a person is twelve years old, are present for more than six months, and cause problems in at least two settings (such as school, home, or recreational activities).")
+
+# BrainDisease.create!(brain_area_id:2, disease_id:1)

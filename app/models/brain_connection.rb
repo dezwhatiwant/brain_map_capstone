@@ -1,0 +1,2 @@
+class BrainConnection < ApplicationRecord
+end
