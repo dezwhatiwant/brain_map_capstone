@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brain Map</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.js"></script>
+  <script src="index.js" defer></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="vue-app">
+    <a href="/#/">Home</a>
+
+    <router-view></router-view>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<template id="brain-area-index-page">
+  <div class="vue-component">
+    <div class="container">     
+      <svg viewBox='-400 0 1500 1500' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <a xlink:href="/#/brain/1">
+        <polygon points="278 217,353 38,299 32,238 39,172 61,110 85,57 135,20 205,33 289,70 342,165 340" style="fill:lightblue;stroke:black;stroke-width:5">
+        </polygon>
+        </a>
+        <a xlink:href="/#/brain/2">
+          <polygon points="561 162,515 98,436 48,354 39,285 173,286 212,351 192,515 220" style="fill:lightyellow;stroke:black;stroke-width:5">
+          </polygon>
+        </a>
+        <a xlink:href="/#/brain/3">
+          <polygon points="169 340,176 364,229 400,294 390,311 370,467 324,523 255,511 220,353 194,282 217" style="fill:lightgreen;stroke:black;stroke-width:5">
+          </polygon>
+        </a>
+        <a xlink:href="/#/brain/4">
+          <polygon points="611 235,611 272,576 319,519 322,504 329,468 317,490 299,523 257,515 218,562 163" style="fill:lightpink;stroke:black;stroke-width:5">
+          </polygon>
+        </a>
+        <a xlink:href="/#/brain/5">
+          <polygon points="555 330,551 367,481 417,429 424,366 397,352 392,340 362,365 352,412 346,472 323,503 331,524 323,553 327" style="fill:orange;stroke:black;stroke-width:5">
+        </a>
+      </svg>
+    </div>
+  </div>
+</template>
+
+<template id="brain-area-show-page">
+  <div class="vue-component">
+    <div class="container">
+
+      <div is="transition-group" name="slide-right">
+        <div v-bind:key="brain_area.id">
+          <h2>{{ brain_area["name"] }}</h2>
+          <h3>{{ brain_area["description"] }}</h3>
+        </div>
+      </div>
+
+    
+      <a v-on:click="onClickButton()">Related Article: {{ brain_area["articles"][0]["name"] }}</a>
+    
+      <svg viewBox='-400 0 1500 1500' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <a xlink:href="/#/brain/1">
+          <polygon v-if= "selectedBrainArea()" class="selected" points="278 217,353 38,299 32,238 39,172 61,110 85,57 135,20 205,33 289,70 342,165 340">
+          </polygon>
+        </a>
+        <a xlink:href="/#/brain/2">
+          <polygon class="unselected" points="561 162,515 98,436 48,354 39,285 173,286 212,351 192,515 220">
+          </polygon>
+        </a>
+        <a xlink:href="/#/brain/3">
+          <polygon class="unselected" points="169 340,176 364,229 400,294 390,311 370,467 324,523 255,511 220,353 194,282 217">
+          </polygon>
+        </a>
+        <a xlink:href="/#/brain/4">
+          <polygon class="unselected" points="611 235,611 272,576 319,519 322,504 329,468 317,490 299,523 257,515 218,562 163">
+          </polygon>
+        </a>
+        <a xlink:href="/#/brain/5">
+          <polygon class="unselected" points="555 330,551 367,481 417,429 424,366 397,352 392,340 362,365 352,412 346,472 323,503 331,524 323,553 327">
+        </a>
+      </svg>
+    </div>
+  </div>
+</template>
