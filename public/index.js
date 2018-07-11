@@ -4,7 +4,24 @@ var BrainAreaIndexPage = {
   template: "#brain-area-index-page",
   data: function() {
     return {
-      brain_areas: []
+      brain_areas: [
+        {
+          name: "",
+          description: "",
+        },        {
+          name: "",
+          description: "",
+        },        {
+          name: "",
+          description: "",
+        },        {
+          name: "",
+          description: "",
+        },        {
+          name: "",
+          description: "",
+        }
+      ]
     };
   },
   created: function() {
@@ -12,8 +29,22 @@ var BrainAreaIndexPage = {
       .get('/api/brain/')
       .then(function(response) {
         this.brain_areas = response.data;
+
+        console.log(this.brain_areas);
       }.bind(this));
   },
+  methods: {},
+  computed: {}
+};
+
+var HomePage = {
+  template: "#home-page",
+  data: function() {
+    return {
+      message: "Welcome to Vue.js!"
+    };
+  },
+  created: function() {},
   methods: {},
   computed: {}
 };
@@ -22,10 +53,53 @@ var BrainAreaShowPage = {
   template: "#brain-area-show-page",
   data: function() {
     return {
-      brain_area: {
-        name: "",
-        description: "",
-      }
+      brain_area: [
+        {
+          name: "",
+          description: "",
+          articles: [
+            {
+              name: ""
+            }
+          ]
+        },
+        {
+          name: "",
+          description: "",
+          articles: [
+            {
+              name: ""
+            }
+          ]
+        },
+        {
+          name: "",
+          description: "",
+          articles: [
+            {
+              name: ""
+            }
+          ]
+        },
+        {
+          name: "",
+          description: "",
+          articles: [
+            {
+              name: ""
+            }
+          ]
+        },
+        {
+          name: "",
+          description: "",
+          articles: [
+            {
+              name: ""
+            }
+          ]
+        }
+      ]
     };
   },
   created: function() {
@@ -36,15 +110,22 @@ var BrainAreaShowPage = {
       }.bind(this));
   },
   methods: {
-    
-
-    onClickButton() {
+    onArticleClick() {
       var link = this.brain_area['articles'][0]['link'];
       location.href = link;
-      window.open(location.href, '_blank');
+      window.open(location.href);
+    },
+    onAreaClick() {
+      var newBa = this.brain_area['id'];
+      location.href = "/#/brain/" + newBa;
     }
   },
-  computed: {}
+  computed: {},
+  updated: function() {
+    this.$nextTick(function() {
+      "#brain-area-show-page";
+    });
+  }
 };
 
 var router = new VueRouter({
