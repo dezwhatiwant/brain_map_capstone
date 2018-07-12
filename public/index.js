@@ -37,18 +37,6 @@ var BrainAreaIndexPage = {
   computed: {}
 };
 
-var HomePage = {
-  template: "#home-page",
-  data: function() {
-    return {
-      message: "Welcome to Vue.js!"
-    };
-  },
-  created: function() {},
-  methods: {},
-  computed: {}
-};
-
 var BrainAreaShowPage = {
   template: "#brain-area-show-page",
   data: function() {
@@ -122,9 +110,11 @@ var BrainAreaShowPage = {
   },
   computed: {},
   updated: function() {
-    this.$nextTick(function() {
-      "#brain-area-show-page";
-    });
+    axios
+      .get("/api/brain/" + this.$route.params.id)
+      .then(function(response) {
+        this.brain_area = response.data;
+      }.bind(this));
   }
 };
 

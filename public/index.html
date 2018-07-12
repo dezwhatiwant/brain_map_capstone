@@ -105,7 +105,7 @@
               <polygon points="611 235,611 272,576 319,519 322,504 329,468 317,490 299,523 257,515 218,562 163" style="fill:lightpink;stroke:black;stroke-width:5">
               </polygon>
             </a>
-            <a xlink:href="/#/brain/4">
+            <a xlink:href="/#/brain/5">
               <polygon points="555 330,551 367,481 417,429 424,366 397,352 392,340 362,365 352,412 346,472 323,503 331,524 323,553 327" style="fill:orange;stroke:black;stroke-width:5">
             </a>
           </svg>
@@ -122,11 +122,11 @@
         <section class="resume-section p-3 p-lg-5 d-flex d-column">
           <div class="container">            
             <svg viewBox='-100 0 1000 500' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <a v-on:click="onAreaClick()">
+              <a xlink:href="/#/brain/1">
               <polygon points="278 217,353 38,299 32,238 39,172 61,110 85,57 135,20 205,33 289,70 342,165 340" style="fill:lightblue;stroke:black;stroke-width:5">
               </polygon>
               </a>
-              <a v-on:click="onAreaClick()">
+              <a xlink:href="/#/brain/2">
                 <polygon points="561 162,515 98,436 48,354 39,285 173,286 212,351 192,515 220" style="fill:lightyellow;stroke:black;stroke-width:5">
                 </polygon>
               </a>
@@ -144,6 +144,7 @@
             </svg>
             <h2>{{ brain_area["name"] }}</h2>
             <h3>{{ brain_area["description"] }}</h3>
+            <h4>{{ brain_area["secondary_connections"] }}</h4>
             <a v-on:click="onArticleClick()">Related Article: {{ brain_area["articles"][0]["name"] }}</a>
           </div>
         </section>
