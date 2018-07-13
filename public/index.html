@@ -77,7 +77,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <!-- <script src="js/resume.min.js"></script> -->
+    <script src="js/resume.min.js"></script>
 
   </body>
 
@@ -89,9 +89,9 @@
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="index">
         <div class="container">
           <svg viewBox='-100 0 1000 500' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <a xlink:href="/#/brain/1">
-            <polygon points="278 217,353 38,299 32,238 39,172 61,110 85,57 135,20 205,33 289,70 342,165 340" style="fill:lightblue;stroke:black;stroke-width:5">
-            </polygon>
+            <a v-bind:v-on:click="selectBrainArea('ba')">
+              <polygon class="selected" points="278 217,353 38,299 32,238 39,172 61,110 85,57 135,20 205,33 289,70 342,165 340">
+              </polygon>
             </a>
             <a xlink:href="/#/brain/2">
               <polygon points="561 162,515 98,436 48,354 39,285 173,286 212,351 192,515 220" style="fill:lightyellow;stroke:black;stroke-width:5">
@@ -144,8 +144,7 @@
             </svg>
             <h2>{{ brain_area["name"] }}</h2>
             <h3>{{ brain_area["description"] }}</h3>
-            <h4>{{ brain_area["secondary_connections"] }}</h4>
-            <a v-on:click="onArticleClick()">Related Article: {{ brain_area["articles"][0]["name"] }}</a>
+            <!-- <a v-on:click="onArticleClick()">Related Article: {{ brain_area["articles"][0]["name"] }}</a> -->
           </div>
         </section>
       </div>

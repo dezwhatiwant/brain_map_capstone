@@ -33,7 +33,11 @@ var BrainAreaIndexPage = {
         console.log(this.brain_areas);
       }.bind(this));
   },
-  methods: {},
+  methods: {
+    selectBrainArea(inputBrainArea) {
+      (inputBrainArea).className = 'selected';
+    }
+  },
   computed: {}
 };
 
