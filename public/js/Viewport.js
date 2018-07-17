@@ -254,7 +254,7 @@ function Viewport (sig, container)
             controls.target.set (-26, -65, 1460);
             updateLightPosition ();
         };
-        resetCamera ();
+        resetCamera (); 
 
         binaryLoader.load ('data/bin/lightTouchPathway.js', function (geom, mat)
         {
