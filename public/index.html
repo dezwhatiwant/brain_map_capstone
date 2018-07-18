@@ -20,24 +20,24 @@
 
     <div id="tabs">
         <ul>
-            <li><a href="#search_tab">Search</a></li>
-            <li><a href="#loaded_tab">Loaded</a></li>
+            <li><a href="#loaded_tab">Display</a></li>
+            <li><a href="#search_tab">Explore</a></li>
             <li><a href="#pathways_tab">Pathways</a></li>
-            <li><a href="#help_tab">Help</a></li>
+            <!-- <li><a href="#help_tab">Help</a></li> -->
         </ul>
         <div id="loaded_tab">
             <div id="loaded_toolbar" class="ui-widget-header ui-corner-all">
                 <span id="toolbar_transparent">
                     <button id="loaded_btn_pin_transparent">pin as transparent</button>
-                    <button id="btn_unpin_all_transparent">unpin all transparent</button>
+                    <!-- <button id="btn_unpin_all_transparent">unpin all transparent</button> -->
                 </span>
                 <span id="toolbar_opaque">
                     <button id="loaded_btn_pin_opaque">pin as opaque</button>
-                    <button id="btn_unpin_all_opaque">unpin all opaque</button>
+                    <!-- <button id="btn_unpin_all_opaque">unpin all opaque</button> -->
                 </span>
-                <button id="btn_unpin">unpin selected</button>
-                <button id="btn_refresh">leave only pinned concepts in the hierarchy</button>
-                <button id="btn_help">help</button>
+                <button id="btn_unpin">remove selected region</button>
+                <button id="btn_refresh">remove all unpinned regions</button>
+                <!-- <button id="btn_help">help</button> -->
             </div>
             <ul id="loaded_result"></ul>
         </div>
@@ -62,7 +62,7 @@
                 <tr><td><button id="pathway_play"></button></td><td><button id="pathway_clear">Clear</button></td></tr>
             </table>
         </div>
-        <div id="help_tab">
+        <!-- <div id="help_tab">
             <table>
                 <tr><td>,</td><td> - </td><td>jump to loaded tab</td></tr>
                 <tr><td>.</td><td> - </td><td>jump to search tab</td></tr>
@@ -74,7 +74,7 @@
                 <tr><td>Ctrl+Enter</td><td> - </td><td>pin selected</td></tr>
                 <tr><td>Shift+Enter</td><td> - </td><td>pin selected transparent</td></tr>
             </table>
-        </div>
+        </div> -->
     </div>
     <div id="viewport"></div>
     <footer>

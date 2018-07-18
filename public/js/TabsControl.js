@@ -1,58 +1,55 @@
-function TabsControl (sig, ontology, viewport)
-{
-    var that = this,
-        conceptId = $('#concept_id');
+function TabsControl(sig, ontology, viewport) {
+  var that = this,
+    conceptId = $('#concept_id');
 
-    // tabs ----------------------------------------------------------------------------------------
-    $('#tabs').tabs (
-    {
-        active: false,
-        activate: function (evnt, ui)
-        {
-            if (ui.newTab.text () == 'Search')
-                searchText.focus ();
+  // tabs ----------------------------------------------------------------------------------------
+  $('#tabs').tabs( {
+    active: false,
+    activate: function(evnt, ui) {
+      if (ui.newTab.text() == 'Search')
+        searchText.focus();
 
-            viewport.hollowFaceStop ();
-        },
-        collapsible: true,
-        hide: { effect: "blind", duration: 200 },
-        show: { effect: "blind", duration: 200 },
-    });
+      viewport.hollowFaceStop();
+    },
+    collapsible: true,
+    hide: { effect: "blind", duration: 200 },
+    show: { effect: "blind", duration: 200 },
+  });
 
-    // loaded tab ----------------------------------------------------------------------------------
-    $('#loaded_toolbar').buttonset ();
-    $("#toolbar_transparent").buttonset();
-    $("#toolbar_opaque").buttonset();
-    $("#loaded_btn_pin_transparent").button ({ text: false, icons: { primary: "ui-icon-radio-off" }})
-                                    .tooltip ({ show: { delay: 1000 }})
-                                    .click (function () { pinTransparent (true); });
-    $("#btn_unpin_all_transparent").button ({ text: false, icons: { primary: "ui-icon-trash" }})
-                                   .tooltip ({ show: { delay: 1000 }})
-                                   .click (function () { unpinAllTransparent (); });
-    $("#loaded_btn_pin_opaque").button ({ text: false, icons: { primary: "ui-icon-bullet" }})
-                               .tooltip ({ show: { delay: 1000 }})
-                               .click (function () { pinOpaque (true); });
-    $("#btn_unpin_all_opaque").button ({ text: false, icons: { primary: "ui-icon-trash" }})
-                              .tooltip ({ show: { delay: 1000 }})
-                              .click (function () { unpinAllOpaque (); });
-    $("#btn_unpin").button ({ text: false, icons: { primary: "ui-icon-extlink" }})
-                   .tooltip ({ show: { delay: 1000 }})
-                   .click (function () { unpinSelected (); });
-    $("#btn_refresh").button ({ text: false, icons: { primary: "ui-icon-refresh" }})
-                     .tooltip ({ show: { delay: 1000 }})
-                     .click (function () { refresh (); });
-    $("#btn_help").button ({ text: false, icons: { primary: "ui-icon-help" }})
-                  .tooltip ({ show: { delay: 1000 }})
-                  .click (function () { help (); });
+  // loaded tab ----------------------------------------------------------------------------------
+  $('#loaded_toolbar').buttonset();
+  $("#toolbar_transparent").buttonset();
+  $("#toolbar_opaque").buttonset();
+  $("#loaded_btn_pin_transparent").button({ text: false, icons: { primary: "ui-icon-pin-s" }})
+    .tooltip({ show: { delay: 1000 }})
+    .click(function() { pinTransparent(true); });
+  $("#btn_unpin_all_transparent").button({ text: false, icons: { primary: "ui-icon-trash" }})
+    .tooltip({ show: { delay: 1000 }})
+    .click(function() { unpinAllTransparent(); });
+  $("#loaded_btn_pin_opaque").button({ text: false, icons: { primary: "ui-icon-pin-w" }})
+    .tooltip({ show: { delay: 1000 }})
+    .click(function() { pinOpaque(true); });
+  $("#btn_unpin_all_opaque").button({ text: false, icons: { primary: "ui-icon-trash" }})
+    .tooltip({ show: { delay: 1000 }})
+    .click(function() { unpinAllOpaque(); });
+  $("#btn_unpin").button({ text: false, icons: { primary: "ui-icon-closethick" }})
+    .tooltip({ show: { delay: 1000 }})
+    .click(function() { unpinSelected(); });
+  $("#btn_refresh").button({ text: false, icons: { primary: "ui-icon-trash" }})
+    .tooltip({ show: { delay: 1000 }})
+    .click(function() { refresh(); });
+  $("#btn_help").button({ text: false, icons: { primary: "ui-icon-help" }})
+    .tooltip({ show: { delay: 1000 }})
+    .click(function() { help(); });
 
-    var loadedResult = $('#loaded_result');
+  var loadedResult = $('#loaded_result');
 
-    // search tab ----------------------------------------------------------------------------------
+  // search tab ----------------------------------------------------------------------------------
     var searchText = $('#search_text'), searchResult = $('#search_result'), searchBtn = $('#search_btn');
-    $("#search_btn_pin_transparent").button ({ text: false, icons: { primary: "ui-icon-radio-off" }})
+    $("#search_btn_pin_transparent").button ({ text: false, icons: { primary: "ui-icon-pin-s" }})
                                     .tooltip ({ show: { delay: 1000 }})
                                     .click (function () { pinTransparent (false); });
-    $("#search_btn_pin_opaque").button ({ text: false, icons: { primary: "ui-icon-bullet" }})
+    $("#search_btn_pin_opaque").button ({ text: false, icons: { primary: "ui-icon-pin-w" }})
                                .tooltip ({ show: { delay: 1000 }})
                                .click (function () { pinOpaque (false); });
 

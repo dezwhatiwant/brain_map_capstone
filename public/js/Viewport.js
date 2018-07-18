@@ -272,7 +272,7 @@ function Viewport (sig, container)
         // dorsal root
         labels.push ({ obj: $('<div>').addClass ('text3d').html ('Dorsal root ganglion'),
                        pos: new THREE.Vector3 (-17.4991, -74.5134, 1385.3722) });
-        labels.push ({ obj: $('<img src="data/bin/neurons.gif">').addClass ('soma3d'),
+        labels.push ({ obj: $('<img src="data/bin/neuron.gif">').addClass ('soma3d'),
                        pos: new THREE.Vector3 (-17.4991, -74.5134, 1385.3722) });
         labels.push ({ obj: $('<div>').addClass ('text3dX').html ('Cuneate tract'),
                        pos: new THREE.Vector3 (-4.013, -65.84, 1391.6848) });
@@ -281,7 +281,7 @@ function Viewport (sig, container)
                        pos: new THREE.Vector3 (-5.5451, -55.9149, 1469.191) });
         labels.push ({ obj: $('<img src="data/bin/synapses.gif">').addClass ('synapse3d'),
                        pos: new THREE.Vector3 (-5.2705, -55.4896, 1469.1831) });
-        labels.push ({ obj: $('<img src="data/bin/neurons.gif">').addClass ('soma3d'),
+        labels.push ({ obj: $('<img src="data/bin/neuron.gif">').addClass ('soma3d'),
                        pos: new THREE.Vector3 (-5.5451, -55.9149, 1469.191) });
         // decussation
         labels.push ({ obj: $('<div>').addClass ('text3d').html ('Decussation in caudal medulla'),
@@ -292,7 +292,7 @@ function Viewport (sig, container)
         // thalamus
         labels.push ({ obj: $('<img src="data/bin/synapses.gif">').addClass ('synapse3d'),
                        pos: new THREE.Vector3 (16.661, -75.3855, 1547.9036) });
-        labels.push ({ obj: $('<img src="data/bin/neurons.gif">').addClass ('soma3d'),
+        labels.push ({ obj: $('<img src="data/bin/neuron.gif">').addClass ('soma3d'),
                        pos: new THREE.Vector3 (16.937, -75.4041, 1548.7134) });
         labels.push ({ obj: $('<div>').addClass ('text3d').html ('Synaptic contact in<br>ventral posterior lateral<br>nucleus of thalamus'),
                        pos: new THREE.Vector3 (16.661, -75.3855, 1547.9036) });
@@ -331,14 +331,14 @@ function Viewport (sig, container)
         // dorsal root
         labels.push ({ obj: $('<div>').addClass ('text3dL').html ('Dorsal root ganglion'),
                        pos: new THREE.Vector3 (-17.4991, -74.5134, 1385.3722) });
-        labels.push ({ obj: $('<img src="data/bin/neurons.gif">').addClass ('soma3d'),
+        labels.push ({ obj: $('<img src="data/bin/neuron.gif">').addClass ('soma3d'),
                        pos: new THREE.Vector3 (-17.4991, -74.5134, 1385.3722) });
         // dorsal horn
         labels.push ({ obj: $('<div>').addClass ('text3d').html ('Synaptic contact in dorsal horn'),
                        pos: new THREE.Vector3 (-4.0732, -68.8282, 1389.7422) });
         labels.push ({ obj: $('<img src="data/bin/synapses.gif">').addClass ('synapse3d'),
                        pos: new THREE.Vector3 (-4.0732, -68.8282, 1389.7422) });
-        labels.push ({ obj: $('<img src="data/bin/neurons.gif">').addClass ('soma3d'),
+        labels.push ({ obj: $('<img src="data/bin/neuron.gif">').addClass ('soma3d'),
                        pos: new THREE.Vector3 (-3.0912, -69.8457, 1389.7321) });
         // decussation
         labels.push ({ obj: $('<div>').addClass ('text3dX').html ('Decussation in cervical spinal cord'),
@@ -351,7 +351,7 @@ function Viewport (sig, container)
         // thalamus
         labels.push ({ obj: $('<img src="data/bin/synapses.gif">').addClass ('synapse3d'),
                        pos: new THREE.Vector3 (16.661, -75.3855, 1547.9036) });
-        labels.push ({ obj: $('<img src="data/bin/neurons.gif">').addClass ('soma3d'),
+        labels.push ({ obj: $('<img src="data/bin/neuron.gif">').addClass ('soma3d'),
                        pos: new THREE.Vector3 (16.937, -75.4041, 1548.7134) });
         labels.push ({ obj: $('<div>').addClass ('text3d').html ('Synaptic contact in<br>ventral posterior lateral<br>nucleus of thalamus'),
                        pos: new THREE.Vector3 (16.661, -75.3855, 1547.9036) });
@@ -390,14 +390,14 @@ function Viewport (sig, container)
         // trigeminal ganglion
         labels.push ({ obj: $('<div>').addClass ('text3d').html ('Trigeminal ganglion'),
                        pos: new THREE.Vector3 (19.3034, -107.3621, 1525.3446) });
-        labels.push ({ obj: $('<img src="data/bin/neurons.gif">').addClass ('soma3d'),
+        labels.push ({ obj: $('<img src="data/bin/neuron.gif">').addClass ('soma3d'),
                        pos: new THREE.Vector3 (19.3034, -107.3621, 1525.3446) });
         // synapse trigeminal complex
         labels.push ({ obj: $('<div>').addClass ('text3dT').html ('Synaptic contact in<br>principal nucleus of<br>trigeminal complex'),
                        pos: new THREE.Vector3 (14.0034, -79.0316, 1520.2351) });
         labels.push ({ obj: $('<img src="data/bin/synapses.gif">').addClass ('synapse3d'),
                        pos: new THREE.Vector3 (14.0034, -79.0316, 1520.2351) });
-        labels.push ({ obj: $('<img src="data/bin/neurons.gif">').addClass ('soma3d'),
+        labels.push ({ obj: $('<img src="data/bin/neuron.gif">').addClass ('soma3d'),
                        pos: new THREE.Vector3 (13.1923, -77.0261, 1520.2151) });
         // decussation
         labels.push ({ obj: $('<div>').addClass ('text3dL').html ('Decussation in mid pons'),
@@ -410,7 +410,7 @@ function Viewport (sig, container)
                        pos: new THREE.Vector3 (-9.2418, -76.7023, 1544.7789) });
         labels.push ({ obj: $('<img src="data/bin/synapses.gif">').addClass ('synapse3d'),
                        pos: new THREE.Vector3 (-9.2418, -76.7023, 1544.7789) });
-        labels.push ({ obj: $('<img src="data/bin/neurons.gif">').addClass ('soma3d'),
+        labels.push ({ obj: $('<img src="data/bin/neuron.gif">').addClass ('soma3d'),
                        pos: new THREE.Vector3 (-9.2503, -76.709, 1545.0573) });
         // post central gyrus
         labels.push ({ obj: $('<img src="data/bin/synapses.gif">').addClass ('synapse3d'),
