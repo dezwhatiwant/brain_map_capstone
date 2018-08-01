@@ -45,74 +45,71 @@ function TabsControl(sig, ontology, viewport) {
   var loadedResult = $('#loaded_result');
 
   // search tab ----------------------------------------------------------------------------------
-    var searchText = $('#search_text'), searchResult = $('#search_result'), searchBtn = $('#search_btn');
-    $("#search_btn_pin_transparent").button ({ text: false, icons: { primary: "ui-icon-pin-s" }})
-                                    .tooltip ({ show: { delay: 1000 }})
-                                    .click (function () { pinTransparent (false); });
-    $("#search_btn_pin_opaque").button ({ text: false, icons: { primary: "ui-icon-pin-w" }})
-                               .tooltip ({ show: { delay: 1000 }})
-                               .click (function () { pinOpaque (false); });
+  var searchText = $('#search_text'), searchResult = $('#search_result'), searchBtn = $('#search_btn');
+  $("#search_btn_pin_transparent").button({ text: false, icons: { primary: "ui-icon-pin-s" }})
+    .tooltip({ show: { delay: 1000 }})
+    .click(function() { pinTransparent(false); });
+  $("#search_btn_pin_opaque").button({ text: false, icons: { primary: "ui-icon-pin-w" }})
+    .tooltip({ show: { delay: 1000 }})
+    .click(function() { pinOpaque(false); });
 
-    searchBtn.button ().click (function (evnt)
+  searchBtn.button().click(function(evnt) {
+    searchText.prop('disabled', true);
+    searchBtn.button('disable');
+
+    $.when.apply($, $('li.ui-selected', searchResult).map(function(i, elmnt) {
+      return ontology.conceptRetrieved($(elmnt).data('concept')).done(function(concept) {
+        viewport.deselect(concept);
+      });
+    })).then(function()
     {
-        searchText.prop ('disabled', true);
-        searchBtn.button ('disable');
-
-        $.when.apply ($, $('li.ui-selected', searchResult).map (function (i, elmnt)
-        {
-            return ontology.conceptRetrieved ($(elmnt).data ('concept')).done (function (concept)
-            {
-                viewport.deselect (concept);
-            });
-        })).then (function ()
-        {
-            ontology.search (searchText.val ()).done (function (list)
+            ontology.search(searchText.val()).done(function(list)
             {
                 var li = [];
-                list.forEach (function (el)
+                list.forEach(function(el)
                 {
-                    li.push ('<li data-concept="' + el.key + '" class="ui-selectee">' + el.name + '</li>');
+                    li.push('<li data-concept="' + el.key + '" class="ui-selectee">' + el.name + '</li>');
                 });
 
-                searchResult.html (li.join (''));
+                searchResult.html(li.join(''));
 
-                searchText.prop ('disabled', false);
-                searchBtn.button ('enable');
+                searchText.prop('disabled', false);
+                searchBtn.button('enable');
             });
         });
     });
 
-    searchResult.selectable (
+    searchResult.selectable(
     {
-        selected: function (evnt, ui)
+        selected: function(evnt, ui)
         {
-            var key = $(ui.selected).data ('concept');
-            // conceptId.text (key);
-            ontology.conceptRetrieved (key).done (function (concept)
+            var key = $(ui.selected).data('concept');
+            // conceptId.text(key);
+            ontology.conceptRetrieved(key).done(function(concept)
             {
-                viewport.select (concept);
+                viewport.select(concept);
             });
         },
-        unselected: function (evnt, ui)
+        unselected: function(evnt, ui)
         {
-            var key = $(ui.unselected).data ('concept');
-            // conceptId.text ('');
-            ontology.conceptRetrieved (key).done (function (concept)
+            var key = $(ui.unselected).data('concept');
+            // conceptId.text('');
+            ontology.conceptRetrieved(key).done(function(concept)
             {
-                viewport.deselect (concept);
+                viewport.deselect(concept);
             });
         }
     });
 
-    searchText.keydown (function (evnt)
+    searchText.keydown(function(evnt)
     {
         if (evnt.keyCode == 38 || evnt.keyCode == 40 || evnt.keyCode == 188) // up/down/,
-            evnt.preventDefault ();
+            evnt.preventDefault();
     });
 
-    searchText.keyup (function (evnt)
+    searchText.keyup(function(evnt)
     {
-        switch (evnt.keyCode)
+        switch(evnt.keyCode)
         {
             case 13: // enter
                 if (evnt.ctrlKey)
@@ -256,7 +253,7 @@ function TabsControl(sig, ontology, viewport) {
     else
     {
         $('#tabs').tabs ('option', 'active', 0);
-        showConcept ('partof.FMA53672', true);
+        showConcept ('partof.FMA50801', true);
     }
 
     function pinTransparent (isFromLoadedTab)
